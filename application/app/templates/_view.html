@@ -1,0 +1,9 @@
+<table>
+  <tr valign="top">
+    <td>
+    <b>{{ user.username }}</b> Posted
+    <a href="{{ url_for('item', itemname=item.name) }}">{{ item.name }}</a> to
+    <a href="{{ url_for('group', groupname=item.group_name) }}">{{ item.group_name }}</a> on
+    {{ item.creation.strftime('%A, %d-%b-%Y at %H:%M:%S') }}<br>
+  </tr>
+</table>

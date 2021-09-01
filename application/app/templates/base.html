@@ -1,0 +1,33 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - SPPP Server</title>
+    {% else %}
+    <title>Welcome to SPPP</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>SPPP:
+      <a href="{{ url_for('index') }}">Home</a>
+      {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}">Login</a>
+      {% else %}
+      <a href="{{ url_for('jump') }}">View Group</a>
+      <a href="{{ url_for('settings') }}">Settings</a>
+      <a href="{{ url_for('put') }}">Put</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+      {% endif %}
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

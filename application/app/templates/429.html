@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Too Many Requests</h1>
+    <p>The number of requests for this specific page has been exceed, please wait several minutes to visit this page again.</p>
+    <p><a href="{{ url_for('index') }}">Go Back to Index</a></p>
+{% endblock %}

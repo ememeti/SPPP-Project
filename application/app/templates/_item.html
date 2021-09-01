@@ -1,0 +1,8 @@
+<table>
+  <tr valign="top">
+    <td>
+    <a href="{{ url_for('view', viewname=item.author_user) }}">{{ item.author_user }}</a> Posted
+    <a href="{{ url_for('item', itemname=item.name) }}">{{ item.name }}</a> on 
+    {{ item.creation.strftime('%A, %d-%b-%Y at %H:%M:%S') }}<br>
+  </tr>
+</table>

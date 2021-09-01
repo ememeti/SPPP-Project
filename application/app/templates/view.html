@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Viewing: {{ user.username }}</h1>
+    <hr>
+      <p>
+        {% if user.joingroups == False %}
+          <b>{{ user.username }}</b> has not been authenticated to join any groups yet. 
+          <hr>
+        {% else %}
+          <b>{{ user.username }}</b> is in Group(s): 
+          {% for group in groups %}
+            {% if group == groups[-1] %}
+            <b>{{ group.groupname }}</b>
+            <hr>
+            {% else %}
+            <b>{{ group.groupname }}</b>, 
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </p>
+      {% for item in items %}
+        {% include '_view.html' %}
+      {% endfor %}
+{% endblock %}

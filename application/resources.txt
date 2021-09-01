@@ -1,0 +1,39 @@
+SOURCES:
+  * https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+     - Up to part 6 was used, I followed the guidelines set by Miguel Grinberg. 
+       Helped me start working with the flask framework.
+
+  * https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
+     - Helped with how to model the database classes.
+
+  * https://flask.palletsprojects.com/en/1.1.x/patterns/fileuploads/
+     - Helped with the process of creating the upload file page.
+
+  * https://wtforms.readthedocs.io/en/2.3.x/fields/
+     - Followed the wtform man pages in order to better integrate it with the 
+       database.
+
+  * https://docs.sqlalchemy.org/en/13/orm/basic_relationships.html
+     - Modeled the many-to-many relationship between groups and users.
+
+  * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+     - Followed this official guide on how to integrate the system with the
+       AWS cloud service using the Python framework, flask.
+
+  * https://flask-wtf.readthedocs.io/en/stable/form.html
+     - Explained how to allow users to upload photos from a HTML form on the flask framework.
+
+  * https://flask.palletsprojects.com/en/1.1.x/config/#instance-folders
+     - Helped with setting up an instance folder and integrating it with the app.
+
+  * https://flask-limiter.readthedocs.io/en/stable/
+     - Explained on how to use the Flask-Limiter library for session logouts.
+
+  * https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/Python3_Flask.html
+     - Goes in depth on how to write safe HTML forms with the Flask python library.
+
+  * https://it.nmu.edu/docs/common-windows-file-extensions
+     - Used to get a list of common file extension types.
+
+  * https://en.wikipedia.org/wiki/Raw_image_format
+     - Gives a list of raw image formats.

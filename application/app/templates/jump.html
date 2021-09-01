@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>View Messages in a Group</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.visitgrp.label }}<br>
+        {{ form.visitgrp }}<br>
+        {% for error in form.visitgrp.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.visit() }}</p>
+    </form>
+{% endblock %}

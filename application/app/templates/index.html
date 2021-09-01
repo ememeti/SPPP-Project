@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Hi, {{ current_user.username }}! Here's How to Use the SPPP Server</h1>
+  {% for inf in info %}
+  <div>
+    <p>
+    <h2>{{ inf.header }}</h2>
+    <t>{{ inf.body }}
+    </p>
+  </div>
+  {% endfor %}
+{% endblock %}

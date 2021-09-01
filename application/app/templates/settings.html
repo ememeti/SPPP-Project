@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <h1>Settings</h1>
+    <body>
+    <form action="" method="post">
+      <div class="row">
+        <div class="column">
+          <h2>Confirm Registration</h2>
+          {{ regisform.hidden_tag() }}
+          <p>
+            {{ regisform.validusers.label }}<br>
+            {{ regisform.validusers }}
+            {% for error in regisform.validusers.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            <p>{{ regisform.confirm() }}</p>
+          </p>
+        </div>
+        <div class="column">
+          <h2>Confirm New Group Members</h2>
+          {{ groupform.hidden_tag() }}
+          <p>
+            {{ groupform.slctgroups.label }}<br>
+            {{ groupform.slctgroups }}
+            {% for error in groupform.slctgroups.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            <p>{{ groupform.joingrp() }}</p>
+          </p>
+        </div>
+        <div class="column" style="background-color:#ccc;">
+          <h2>Create a New Group</h2>
+          {{ createform.hidden_tag() }}
+          <p>
+            {{ createform.newgroup.label }}<br>
+            {{ createform.newgroup(size=16, maxlength=16) }}
+            {% for error in createform.newgroup.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            <p>{{ createform.create() }}</p>
+          </p>
+        </div>
+      </div>
+    </form>
+  </body>
+{% endblock %}

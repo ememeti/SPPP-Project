@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  newspan { 
+    display:block;
+    width:750px;
+    word-wrap:break-word;
+    margin-left: 50px;
+  }
+</style>
+  <h1>Item: {{ item.name }}</h1>
+    <hr>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+      <p>
+        Filename: {{ item.fname }}<br>
+        Content-Type: {{ item.metatype }}<br>
+        Content-Length: {{ item.metasize }}<br>
+        Created by: {{ item.author_user }}<br>
+        Item Description:<br>
+        <newspan>{{ item.descriptor }}</newspan>
+        Item Posted On: {{ item.creation }}<br>
+        Item Last Accessed On: {{ item.lastaccess }}<br>
+        Item Posted to Group: {{ item.group_name }}<br>
+      </p>
+      <p>
+        {{ form.downld() }}
+        <span style="padding-left:4em">
+          {{ form.delete() }}
+        </span>
+      </p>
+    </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Group: {{ group.name }}</h1>
+    <hr>
+      {% for item in items %}
+        {% include '_item.html' %}
+      {% endfor %}
+{% endblock %}

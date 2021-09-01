@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Put</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.sendtogrp.label }}<br>
+        {{ form.sendtogrp }}<br>
+        {% for error in form.sendtogrp.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size=68, maxlength=68) }}<br>
+        {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.descriptor.label }}<br>
+        {{ form.descriptor(cols=100, rows=10, maxlength=1000) }}<br>
+        {% for error in form.descriptor.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.itemupload.label }}<br>
+        {{ form.itemupload }}<br>
+        {% for error in form.itemupload.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.upload() }}</p>
+    </form>
+{% endblock %}

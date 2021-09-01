@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Register</h1>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.fulnm.label }}<br>
+        {{ form.fulnm(size=80, maxlength=80) }}<br>
+        {% for error in form.fulnm.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.usenm.label }}<br>
+        {{ form.usenm(size=16, maxlength=16) }}<br>
+        {% for error in form.usenm.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.pswrd.label }}<br>
+        {{ form.pswrd(size=64, maxlength=16) }}<br>
+        {% for error in form.pswrd.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.rpt_pswrd.label }}<br>
+        {{ form.rpt_pswrd(size=64, maxlength=16) }}<br>
+        {% for error in form.rpt_pswrd.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>
+        {{ form.groups.label }}<br>
+        {{ form.groups }}<br>
+        {% for error in form.groups.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.rgstr() }}</p>
+    </form>
+{% endblock %}

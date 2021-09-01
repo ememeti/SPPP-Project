@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Sign In</h1>
+  <form action="" method="post" maxlength = "6" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.usenm.label }}<br>
+      {{ form.usenm(size=16, maxlength=16) }}<br>
+      {% for error in form.usenm.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>
+      {{ form.pswrd.label }}<br>
+      {{ form.pswrd(size=16, maxlength=16) }}<br>
+      {% for error in form.pswrd.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>{{ form.sgnin() }}</p>
+  </form>
+  <p>Not Registered? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+{% endblock %}
